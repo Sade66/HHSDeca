@@ -1,0 +1,42 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('https://images.pexels.com/photos/331990/pexels-photo-331990.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+nav {
+  padding: 10;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 2;
+  overflow: hidden;
+}
+nav li {
+  list-style-type:111111
+  margin: 0;
+  padding: 10;
+  float: left;
+}
+nav a:hover {
+  color: F0F0F0;
+  text-shadow: 2px 2px 5px #000000;
+}
+nav li a {
+  text-decoration: none;
+  display: block;
+  font-family: Rubik;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+#nav_title {
+  font-family: Yantramanav;
+  font-size: 30px;
+  color: FFFFFF;
+  padding-right: 15px;
+}
