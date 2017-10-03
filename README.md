@@ -1,2 +1,3 @@
 # HHSDeca
-HHs DECA Website
+HHS DECA Website
+
