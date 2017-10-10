@@ -1,20 +1,53 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <head>
   <title>HHS Deca</title>
   <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Rubik|Yantramanav:900" rel="stylesheet">
-  <!-- Developed by Sam Delagrange-->
+
+  <style>
+    body{
+    /*Remove below line to make bgimage NOT fixed*/
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    /*Use center center in place of 300 200 to center bg image*/
+    background-position: 300 200;
+    }
+    </style>
+
+    <script language="JavaScript1.2">
+    var bgimages=new Array()
+    bgimages[0]="assets/img/main1.png"
+    bgimages[1]="assets/img/main2.png"
+    bgimages[2]="assets/img/main3.png"
+    bgimages[3]="assets/img/main4.png"
+    bgimages[4]="assets/img/main5.png"
+    bgimages[5]="assets/img/main6.png"
+    bgimages[6]="assets/img/main7.png"
+
+    //preload images
+    var pathToImg=new Array()
+    for (i=0;i<bgimages.length;i++){
+    pathToImg[i]=new Image()
+    pathToImg[i].src=bgimages[i]
+    }
+
+    var inc=-1
+
+    function bgSlide(){
+    if (inc<bgimages.length-1)
+    inc++
+    else
+    inc=0
+    document.body.background=pathToImg[inc].src
+    }
+
+    if (document.all||document.getElementById)
+    window.onload=new Function('setInterval("bgSlide()",3000)')
+
+  </script>
+<!-- Developed by Sam Delagrange-->
 </head>
 <body>
-  <ul class="main-slideshow">
-    <li><span>Image 01</span><div><h3>HOMESTEAD DECA</h3></div></li>
-    <li><span>image 02</span><div><h3>HOMESTEAD DECA</h3></div></li>
-    <li><span>image 03</span><div><h3>HOMESTEAD DECA</h3></div></li>
-    <li><span>image 04</span><div><h3>HOMESTEAD DECA</h3></div></li>
-    <li><span>image 05</span><div><h3>HOMESTEAD DECA</h3></div></li>
-    <li><span>image 06</span><div><h3>HOMESTEAD DECA</h3></div></li>
-    <li><span>image 07</span><div><h3>HOMESTEAD DECA</h3></div></li>
-  </ul>
   <header>
     <nav>
       <ul>
@@ -24,4 +57,9 @@
       </ul>
     </nav>
   </header>
+  <h1 id="home_title">HOMESTEAD <br/> DECA</h1>
+  <footer>
+    <p id="copyright">Copyright &copy; 2017 Homestead High School<p>
+    <p id="developer">Developed by <a href="https://sade66.me">Sam Delagrange</a></p>
+  </footer>
 </body>
