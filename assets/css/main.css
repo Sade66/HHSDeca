@@ -6,6 +6,7 @@ html, body {
 nav {
   padding: 5px;
   text-align: center;
+  animation-delay: 1s;
 }
 nav ul {
   list-style-type: none;
@@ -40,6 +41,7 @@ nav li a {
   color: #FFFFFF;
   text-align: center;
   text-shadow: 2px 2px 5px #000000;
+  animation-delay: 1s;
 }
 
 #copyright {
@@ -49,6 +51,7 @@ nav li a {
   text-shadow: 1px 1px 3px #000000;
   font-family: Rubik;
   padding-left: 5px;
+  animation-delay: 1s;
 }
 #developer {
   position: absolute;
@@ -60,6 +63,7 @@ nav li a {
   color: #FFFFFF;
   text-shadow: 1px 1px 3px #000000;
   font-family: Rubik;
+  animation-delay: 1s;
 }
 #developer a {
   text-decoration: none;
@@ -80,4 +84,5 @@ nav li a {
   left: 25%;
   right: 25%;
   width: 50%;
+  animation-delay: 1s;
 }
