@@ -69,3 +69,15 @@ nav li a {
   color: #ffa577;
   font-weight: bolder;
 }
+#notice {
+  font-family: Rubik;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px #000000;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+  left: 25%;
+  right: 25%;
+  width: 50%;
+}
