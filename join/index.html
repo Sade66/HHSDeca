@@ -1,14 +1,131 @@
 <!DOCTYPE html>
 <head>
   <title> Join ~ HHS DECA</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-  <form>
+  <form id="joinForm">
     <h3>First Name</h3>
     <p>Please provide your LEGAL first name.</p>
-    <input type="text" name="Legal First Name"><br/>
+    <input type="text" name="First_Name"><br/>
     <h3>Middle Name</h3>
     <p>Leave blank if you don't have a middle name.</p>
-    <input type="text" name="middlename"><br/>
+    <input type="text" name="Middle_Name"><br/>
     <h3>Last Name</h3>
-    <input type="text" name="lastname"><br/>
+    <input type="text" name="Last_Name"><br/>
+    <h3>Gender</h3>
+    <input type="radio" name="Gender" value="Male">Male<br/>
+    <input type="radio" name="Gender" value="Female">Female<br/>
+    <h3>Grade</h3>
+    <input type="radio" name="Grade" value="9">Freshman<br/>
+    <input type="radio" name="Grade" value="10">Sophomore<br/>
+    <input type="radio" name="Grade" value="11">Junior<br/>
+    <input type="radio" name="Grade" value="12">Senior<br/>
+    <h3>Mobile Phone Number</h3>
+    <p>Numbers only please. Example: 2601239876</p>
+    <input type="number" name="Mobile_Phone_Number"><br/>
+    <h3>Email Address</h3>
+    <p>Please provide an email that you check on a regular basis.</p>
+    <input type="email" name="Email_Address"><br/>
+    <h3>Shirt Size</h3>
+    <input type="radio" name="Shirt_Size" value="0 Extra Small">Extra Small<br/>
+    <input type="radio" name="Shirt_Size" value="1 Small">Small<br/>
+    <input type="radio" name="Shirt_Size" value="2 Medium">Medium<br/>
+    <input type="radio" name="Shirt_Size" value="3 Large">Large<br/>
+    <input type="radio" name="Shirt_Size" value="4 XL">XL<br/>
+    <input type="radio" name="Shirt_Size" value="5 XXL">XXL<br/>
+    <h3>Years of Previous DECA Experience</h3>
+    <p>This does not include this school year.</p>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="0">0<br/>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="1">1<br/>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="3">2<br/>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="3">3<br/>
+    <h3>Date of Birth</h3>
+    <input type="date" name="Date_of_Birth"><br/>
+    <h3>Locker Number</h3>
+    <p>If you want us to deliver a Carmel DECA locker sign, please provide your locker number below.
+      If you do not want a locker sign, leave blank.</P>
+    <input type="number" name="Locker_Number"><br/>
+    <h3>I have read and agree to the Carmel DECA Code of Conduct.</h3>
+    <input type="radio" name="DECA_Code_of_Conduct_Agreement" value="Yes">Yes<br/>
+    <h3>I have read and agree to the Homestead DECA Hours policy.</h3>
+    <p>I understand that I must have 10 DECA Learning Hours and 5 DECA Service Hours by Feb 10, 2018
+      in order to compete at the State Career Development Conference.</p>
+    <input type="radio" name="DECA_Hours_Policy" value="Yes">Yes<br/>
+    <h3>Current Business Class</h3>
+    <p>Choose HIghest Level</p>
+    <input type="radio" name="Current_Business_Class" value="IB Business Management HL 3-4">IB Business Management HL 3-4<br/>
+    <input type="radio" name="Current_Business_Class" value="IB Business Management HL 1-2 or SL 1-2">IB Business Management HL 1-2 or SL 1-2<br/>
+    <input type="radio" name="Current_Business_Class" value="Accounting 3-4">Accounting 3-4<br/>
+    <input type="radio" name="Current_Business_Class" value="Accounting 1-2">Accounting 1-2<br/>
+    <input type="radio" name="Current_Business_Class" value="Marketing 1-2">Marketing 1-2<br/>
+    <input type="radio" name="Current_Business_Class" value="Priniciples of Business Management (Dual Credit)">Priniciples of Business Management (Dual Credit)<br/>
+    <input type="radio" name="Current_Business_Class" value="Business Law">Business Law<br/>
+    <input type="radio" name="Current_Business_Class" value="Intro to Business">Intro to Business<br/>
+    <input type="radio" name="Current_Business_Class" value="">Other<br/>
+
+    <br/>
+    <input type="submit" id="submit-form" value="Submit">
+  </form>
+</body>
+<script>
+// Variable to hold request
+var request;
+
+// Bind to the submit event of our form
+$("#joinForm").submit(function(event){
+
+    // Abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+
+    // Let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+
+    // Serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
+
+    // Fire off the request to /form.php
+    request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbxDBZ8vVBewmxALCoOzINTdlKA7iwKEpEPWVQj3xCdRCGkrwMo/exec?First_Name=Sam",
+        type: "post",
+        data: serializedData
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        console.log("Hooray, it worked!");
+        console.log(response);
+        console.log(textStatus);
+        console.log(jqXHR);
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+    // Prevent default posting of form
+    event.preventDefault();
+});
+</script>
