@@ -1,0 +1,134 @@
+<!-- Developed by Sam Delagrange -->
+<!DOCTYPE html>
+<head>
+  <title> Join ~ HHS DECA</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+<body>
+  <form id="joinForm" class="pure-form" method=post onSubmit="window.location='sent.html'">
+    <h3>First Name <span>*</span></h3>
+    <p>Please provide your LEGAL first name.</p>
+    <input type="text" name="First_Name" required><br/>
+    <h3>Middle Name <span>*</span></h3>
+    <p>Leave blank if you don't have a middle name.</p>
+    <input type="text" name="Middle_Name" required><br/>
+    <h3>Last Name <span>*</span></h3>
+    <input type="text" name="Last_Name" required><br/>
+    <h3>Gender</h3>
+    <input type="radio" name="Gender" value="Male">Male<br/>
+    <input type="radio" name="Gender" value="Female">Female<br/>
+    <h3>Grade <span>*</span></h3>
+    <input type="radio" name="Grade" value="9" required>Freshman<br/>
+    <input type="radio" name="Grade" value="10" required>Sophomore<br/>
+    <input type="radio" name="Grade" value="11" required>Junior<br/>
+    <input type="radio" name="Grade" value="12" required>Senior<br/>
+    <h3>Mobile Phone Number <span>*</span></h3>
+    <p>Numbers only please. Example: 2601239876</p>
+    <input type="number" name="Mobile_Phone_Number" required><br/>
+    <h3>Email Address <span>*</span></h3>
+    <p>Please provide an email that you check on a regular basis.</p>
+    <input type="email" name="Email_Address" required><br/>
+    <h3>Shirt Size <span>*</span></h3>
+    <input type="radio" name="Shirt_Size" value="0 Extra Small" required>Extra Small<br/>
+    <input type="radio" name="Shirt_Size" value="1 Small" required>Small<br/>
+    <input type="radio" name="Shirt_Size" value="2 Medium" required>Medium<br/>
+    <input type="radio" name="Shirt_Size" value="3 Large" required>Large<br/>
+    <input type="radio" name="Shirt_Size" value="4 XL" required>XL<br/>
+    <input type="radio" name="Shirt_Size" value="5 XXL" required>XXL<br/>
+    <h3>Years of Previous DECA Experience <span>*</span></h3>
+    <p>This does not include this school year.</p>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="0" required>0<br/>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="1" required>1<br/>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="3" required>2<br/>
+    <input type="radio" name="Years_of_Previous_DECA_Experience" value="3" required>3<br/>
+    <h3>Date of Birth <span>*</span></h3>
+    <input type="date" name="Date_of_Birth" required><br/>
+    <h3>Locker Number</h3>
+    <p>If you want us to deliver a Carmel DECA locker sign, please provide your locker number below.
+      If you do not want a locker sign, leave blank.</P>
+    <input type="number" name="Locker_Number"><br/>
+    <h3>I have read and agree to the Homestead DECA Code of Conduct. <span>*</span></h3>
+    <input type="radio" name="DECA_Code_of_Conduct_Agreement" value="Yes" required>Yes<br/>
+    <h3>I have read and agree to the Homestead DECA Hours policy. <span>*</span></h3>
+    <p>I understand that I must have 10 DECA Learning Hours and 5 DECA Service Hours by Feb 10, 2018
+      in order to compete at the State Career Development Conference.</p>
+    <input type="radio" name="DECA_Hours_Policy" value="Yes" required>Yes<br/>
+    <h3>Current Business Class <span>*</span></h3>
+    <p>Choose HIghest Level</p>
+    <input type="radio" name="Current_Business_Class" value="IB Business Management HL 3-4" required>IB Business Management HL 3-4<br/>
+    <input type="radio" name="Current_Business_Class" value="IB Business Management HL 1-2 or SL 1-2" required>IB Business Management HL 1-2 or SL 1-2<br/>
+    <input type="radio" name="Current_Business_Class" value="Accounting 3-4" required>Accounting 3-4<br/>
+    <input type="radio" name="Current_Business_Class" value="Accounting 1-2" required>Accounting 1-2<br/>
+    <input type="radio" name="Current_Business_Class" value="Marketing 1-2" required>Marketing 1-2<br/>
+    <input type="radio" name="Current_Business_Class" value="Priniciples of Business Management (Dual Credit)" required>Priniciples of Business Management (Dual Credit)<br/>
+    <input type="radio" name="Current_Business_Class" value="Business Law" required>Business Law<br/>
+    <input type="radio" name="Current_Business_Class" value="Intro to Business" required>Intro to Business<br/>
+    <input type="radio" name="Current_Business_Class" value="Other" required>Other<br/>
+
+    <br/>
+    <input type="submit" id="submit-form" value="Submit">
+  </form>
+</body>
+<script>
+// Variable to hold request
+var request;
+
+// Bind to the submit event of our form
+$("#joinForm").submit(function(event){
+
+    // Abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+
+    // Let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+
+    // Serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
+
+    // Fire off the request to /form.php
+    request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbxDBZ8vVBewmxALCoOzINTdlKA7iwKEpEPWVQj3xCdRCGkrwMo/exec",
+        type: "post",
+        data: serializedData
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        console.log("Hooray, it worked!");
+        console.log(response);
+        console.log(textStatus);
+        console.log(jqXHR);
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+    // Prevent default posting of form
+    event.preventDefault();
+});
+</script>
+<!-- Developed by Sam Delagrange -->

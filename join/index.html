@@ -1,131 +1,82 @@
 <!DOCTYPE html>
-<head>
-  <title> Join ~ HHS DECA</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
-  <form id="joinForm">
-    <h3>First Name</h3>
-    <p>Please provide your LEGAL first name.</p>
-    <input type="text" name="First_Name"><br/>
-    <h3>Middle Name</h3>
-    <p>Leave blank if you don't have a middle name.</p>
-    <input type="text" name="Middle_Name"><br/>
-    <h3>Last Name</h3>
-    <input type="text" name="Last_Name"><br/>
-    <h3>Gender</h3>
-    <input type="radio" name="Gender" value="Male">Male<br/>
-    <input type="radio" name="Gender" value="Female">Female<br/>
-    <h3>Grade</h3>
-    <input type="radio" name="Grade" value="9">Freshman<br/>
-    <input type="radio" name="Grade" value="10">Sophomore<br/>
-    <input type="radio" name="Grade" value="11">Junior<br/>
-    <input type="radio" name="Grade" value="12">Senior<br/>
-    <h3>Mobile Phone Number</h3>
-    <p>Numbers only please. Example: 2601239876</p>
-    <input type="number" name="Mobile_Phone_Number"><br/>
-    <h3>Email Address</h3>
-    <p>Please provide an email that you check on a regular basis.</p>
-    <input type="email" name="Email_Address"><br/>
-    <h3>Shirt Size</h3>
-    <input type="radio" name="Shirt_Size" value="0 Extra Small">Extra Small<br/>
-    <input type="radio" name="Shirt_Size" value="1 Small">Small<br/>
-    <input type="radio" name="Shirt_Size" value="2 Medium">Medium<br/>
-    <input type="radio" name="Shirt_Size" value="3 Large">Large<br/>
-    <input type="radio" name="Shirt_Size" value="4 XL">XL<br/>
-    <input type="radio" name="Shirt_Size" value="5 XXL">XXL<br/>
-    <h3>Years of Previous DECA Experience</h3>
-    <p>This does not include this school year.</p>
-    <input type="radio" name="Years_of_Previous_DECA_Experience" value="0">0<br/>
-    <input type="radio" name="Years_of_Previous_DECA_Experience" value="1">1<br/>
-    <input type="radio" name="Years_of_Previous_DECA_Experience" value="3">2<br/>
-    <input type="radio" name="Years_of_Previous_DECA_Experience" value="3">3<br/>
-    <h3>Date of Birth</h3>
-    <input type="date" name="Date_of_Birth"><br/>
-    <h3>Locker Number</h3>
-    <p>If you want us to deliver a Carmel DECA locker sign, please provide your locker number below.
-      If you do not want a locker sign, leave blank.</P>
-    <input type="number" name="Locker_Number"><br/>
-    <h3>I have read and agree to the Carmel DECA Code of Conduct.</h3>
-    <input type="radio" name="DECA_Code_of_Conduct_Agreement" value="Yes">Yes<br/>
-    <h3>I have read and agree to the Homestead DECA Hours policy.</h3>
-    <p>I understand that I must have 10 DECA Learning Hours and 5 DECA Service Hours by Feb 10, 2018
-      in order to compete at the State Career Development Conference.</p>
-    <input type="radio" name="DECA_Hours_Policy" value="Yes">Yes<br/>
-    <h3>Current Business Class</h3>
-    <p>Choose HIghest Level</p>
-    <input type="radio" name="Current_Business_Class" value="IB Business Management HL 3-4">IB Business Management HL 3-4<br/>
-    <input type="radio" name="Current_Business_Class" value="IB Business Management HL 1-2 or SL 1-2">IB Business Management HL 1-2 or SL 1-2<br/>
-    <input type="radio" name="Current_Business_Class" value="Accounting 3-4">Accounting 3-4<br/>
-    <input type="radio" name="Current_Business_Class" value="Accounting 1-2">Accounting 1-2<br/>
-    <input type="radio" name="Current_Business_Class" value="Marketing 1-2">Marketing 1-2<br/>
-    <input type="radio" name="Current_Business_Class" value="Priniciples of Business Management (Dual Credit)">Priniciples of Business Management (Dual Credit)<br/>
-    <input type="radio" name="Current_Business_Class" value="Business Law">Business Law<br/>
-    <input type="radio" name="Current_Business_Class" value="Intro to Business">Intro to Business<br/>
-    <input type="radio" name="Current_Business_Class" value="">Other<br/>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Join ~ HHS DECA</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
 
-    <br/>
-    <input type="submit" id="submit-form" value="Submit">
-  </form>
-</body>
-<script>
-// Variable to hold request
-var request;
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1>Join Homestead DECA	</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" onSubmit="window.location='sent.html'" action="https://script.google.com/macros/s/AKfycbxDBZ8vVBewmxALCoOzINTdlKA7iwKEpEPWVQj3xCdRCGkrwMo/exec" target="submitFrame">
+					<ol class="fs-fields">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">What's your first name?</label><br/>
+							<label class="fs-anim-upper" for="q1">Please provide your legal first name.</label><br/><br/>
+							<input class="fs-anim-lower" id="q1" name="First_Name" type="text" placeholder="" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">What's your middle name?</label><br/>
+							<label class="fs-anim-upper" for="q2">Leave blank if you don't have a middle name.</label><br/><br/>
+							<input class="fs-anim-lower" id="q2" name="Middle_Name" type="text" placeholder=""/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">What's your last name?</label><br/>
+							<input class="fs-anim-lower" id="q3" name="Last_Name" type="text" placeholder="" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">Select your gender.</label><br/>
+							<div class="fs-radio-group clearfix fs-anim-lower">
+								<span><input id="q4a" name="Gender" type="radio" value="conversion"/><label for="q4a" class="radio">Male</label></span>
+								<span><input id="q4b" name="Gender" type="radio" value="social"/><label for="q4b" class="radio">Female</label></span>
+							</div>
+						</li>
+					</ol><!-- /fs-fields -->
+					<button class="fs-submit" type="submit" name="submit" value="submit">Send answers</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
 
-// Bind to the submit event of our form
-$("#joinForm").submit(function(event){
+			<!-- Related demos -->
+			<div class="related">
+				<p>Developed by Sam Delagrange</p>
+			</div>
 
-    // Abort any pending request
-    if (request) {
-        request.abort();
-    }
-    // setup some local variables
-    var $form = $(this);
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script src="js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
 
-    // Let's select and cache all the fields
-    var $inputs = $form.find("input, select, button, textarea");
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
 
-    // Serialize the data in the form
-    var serializedData = $form.serialize();
-
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    $inputs.prop("disabled", true);
-
-    // Fire off the request to /form.php
-    request = $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxDBZ8vVBewmxALCoOzINTdlKA7iwKEpEPWVQj3xCdRCGkrwMo/exec?First_Name=Sam",
-        type: "post",
-        data: serializedData
-    });
-
-    // Callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("Hooray, it worked!");
-        console.log(response);
-        console.log(textStatus);
-        console.log(jqXHR);
-    });
-
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
-
-    // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
-    });
-
-    // Prevent default posting of form
-    event.preventDefault();
-});
-</script>
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+	</body>
+</html>
+<iframe width="0" height="0" border="0" name="submitFrame" id="submitFrame"></iframe>
