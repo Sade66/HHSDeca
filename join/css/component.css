@@ -96,7 +96,7 @@
 
 /* Visibility control of elements */
 .fs-form-full .fs-fields > li,
-.fs-nav-dots, 
+.fs-nav-dots,
 .fs-progress,
 .fs-numbers,
 button.fs-continue,
@@ -352,6 +352,14 @@ button.fs-continue,
 
 .fs-fields .fs-radio-custom label.radio-conversion::after {
 	background-image: url(../img/conversion.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-male::after {
+	background-image: url(../img/male.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-female::after {
+	background-image: url(../img/female.svg);
 }
 
 .fs-fields .fs-radio-custom label:hover::after,
