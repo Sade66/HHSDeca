@@ -52,14 +52,14 @@
 	width: 100%;
 	height: 100%;
 	background: #fffed8;
-	color: #3b3f45;
+	color: #548fea;
 	font-size: 1.2em;
 }
 
 .fs-form-overview .fs-fields::before {
 	display: block;
 	margin-bottom: 2.5em;
-	color: #3b3f45;
+	color: #548fea;
 	content: 'Review & Submit';
 	font-weight: 700;
 	font-size: 1.85em;
@@ -268,7 +268,7 @@ button.fs-continue,
 }
 
 .fs-fields input:focus {
-	background-color: #3b3f45; /* Fixes chrome bug with placeholder */
+	background-color: #548fea; /* Fixes chrome bug with placeholder */
 }
 
 .fs-form-overview .fs-fields input:focus {
@@ -360,6 +360,66 @@ button.fs-continue,
 
 .fs-fields .fs-radio-custom label.radio-female::after {
 	background-image: url(../img/female.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-freshman::after {
+	background-image: url(../img/freshman.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-sophomore::after {
+	background-image: url(../img/sophomore.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-junior::after {
+	background-image: url(../img/junior.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-senior::after {
+	background-image: url(../img/senior.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-shirt-xs::after {
+	background-image: url(../img/xs.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-shirt-s::after {
+	background-image: url(../img/s.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-shirt-m::after {
+	background-image: url(../img/m.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-shirt-l::after {
+	background-image: url(../img/l.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-shirt-xl::after {
+	background-image: url(../img/xl.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-shirt-xxl::after {
+	background-image: url(../img/xxl.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-0years::after {
+	background-image: url(../img/0-years.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-1years::after {
+	background-image: url(../img/1-years.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-2years::after {
+	background-image: url(../img/2-years.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-3years::after {
+	background-image: url(../img/3-years.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-yes::after {
+	background-image: url(../img/yes.svg);
 }
 
 .fs-fields .fs-radio-custom label:hover::after,
@@ -536,7 +596,7 @@ button.fs-continue,
 	overflow: hidden;
 	color: rgba(0,0,0,0.4);
 	margin: 40px;
-	width: 2em;
+	width: 3em;
 	font-weight: 700;
 	font-size: 2em;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

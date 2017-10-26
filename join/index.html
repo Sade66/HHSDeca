@@ -20,7 +20,7 @@
 				<div class="fs-title">
 					<h1>Join Homestead DECA	</h1>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" onSubmit="window.location='sent.html'" action="https://script.google.com/macros/s/AKfycbxDBZ8vVBewmxALCoOzINTdlKA7iwKEpEPWVQj3xCdRCGkrwMo/exec" target="submitFrame">
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" onSubmit="OnSubmitSuccess()" action="https://script.google.com/macros/s/AKfycbxDBZ8vVBewmxALCoOzINTdlKA7iwKEpEPWVQj3xCdRCGkrwMo/exec" target="submitFrame">
 					<ol class="fs-fields">
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q1">What's your first name?</label><br/>
@@ -28,23 +28,90 @@
 							<input class="fs-anim-lower" id="q1" name="First_Name" type="text" placeholder="" required/>
 						</li>
 						<li>
-							<label class="fs-field-label fs-anim-upper" for="q1">What's your middle name?</label><br/>
+							<label class="fs-field-label fs-anim-upper" for="q2">What's your middle name?</label><br/>
 							<label class="fs-anim-upper" for="q2">Leave blank if you don't have a middle name.</label><br/><br/>
 							<input class="fs-anim-lower" id="q2" name="Middle_Name" type="text" placeholder=""/>
 						</li>
 						<li>
-							<label class="fs-field-label fs-anim-upper" for="q1">What's your last name?</label><br/>
-							<input class="fs-anim-lower" id="q3" name="Last_Name" type="text" placeholder=""/>
+							<label class="fs-field-label fs-anim-upper" for="q3">What's your last name?</label><br/>
+							<input class="fs-anim-lower" id="q3" name="Last_Name" type="text" placeholder="" required/>
 						</li>
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" for="q4">Pleass select you gender.</label>
 							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-								<span><input id="q4a" name="Gender" type="radio" value="Male"/><label for="q4a" class="radio-male">Male</label></span>
-								<span><input id="q4b" name="Gender" type="radio" value="Female"/><label for="q4b" class="radio-female">Female</label></span>
+								<span><input id="q4a" name="Gender" type="radio" value="Male" required/><label for="q4a" class="radio-male">Male</label></span>
+								<span><input id="q4b" name="Gender" type="radio" value="Female" required/><label for="q4b" class="radio-female">Female</label></span>
 							</div>
 						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q5">What grade are you in?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q5a" name="Grade" type="radio" value="9 Freshman" required/><label for="q5a" class="radio-freshman">Freshman</label></span>
+								<span><input id="q5b" name="Grade" type="radio" value="10 Sophomore" required/><label for="q5b" class="radio-sophomore">Sophomore</label></span>
+								<span><input id="q5c" name="Grade" type="radio" value="11 Junior" required/><label for="q5c" class="radio-junior">Junior</label></span>
+								<span><input id="q5d" name="Grade" type="radio" value="12 Senior" required/><label for="q5d" class="radio-senior">Senior</label></span>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q6">Please provide your mobile phone number.</label><br/>
+							<label class="fs-anim-upper" for="q6">Only numbers please. Example: 2601234567</label><br/><br/>
+							<input class="fs-anim-lower" id="q6" name="Mobile_Phone_Number" type="number" placeholder="2601234567" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q7">What's your email?</label><br/>
+							<label class="fs-anim-upper" for="q7">Please provide an email that you check on a regular basis.</label><br/><br/>
+							<input class="fs-anim-lower" id="q7" name="Email_Address" type="email" placeholder="info@hhsdeca.com" required/>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q8">What's your shirt size'?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q8a" name="Shirt_Size" type="radio" value="0 Extra Small" required/><label for="q8a" class="radio-shirt-xs"></label></span>
+								<span><input id="q8b" name="Shirt_Size" type="radio" value="1 Small" required/><label for="q8b" class="radio-shirt-s"></label></span>
+								<span><input id="q8c" name="Shirt_Size" type="radio" value="2 Medium" required/><label for="87c" class="radio-shirt-m"></label></span>
+								<span><input id="q8d" name="Shirt_Size" type="radio" value="3 Large" required/><label for="q8d" class="radio-shirt-l"></label></span>
+								<span><input id="q8e" name="Shirt_Size" type="radio" value="4 XL" required/><label for="q8e" class="radio-shirt-xl"></label></span>
+								<span><input id="q8f" name="Shirt_Size" type="radio" value="5 XXL" required/><label for="q8f" class="radio-shirt-xxl"></label></span>
+							</div>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q9">How many previous years of DECA experience do you have?</label>
+							<label class="fs-anim-upper" for="q9">This does not include the current school year.</label><br/><br/>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q9a" name="Years_of_Previous_DECA_Experience" type="radio" value="0" required/><label for="q9a" class="radio-0years"> </label></span>
+								<span><input id="q9b" name="Years_of_Previous_DECA_Experience" type="radio" value="1 Sophomore" required/><label for="q9b" class="radio-1years"> </label></span>
+								<span><input id="q9c" name="Years_of_Previous_DECA_Experience" type="radio" value="2 Junior" required/><label for="q9c" class="radio-2years"> </label></span>
+								<span><input id="q9d" name="Years_of_Previous_DECA_Experience" type="radio" value="3 Senior" required/><label for="q9d" class="radio-3years"> </label></span>
+							</div>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q10">When is your birthday?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<input class="fs-anim-lower" id="q10" name="Date_of_Birth" type="date" placeholder="" required/>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q11">What's you locker number?</label><br/>
+							<label class="fs-anim-upper" for="q11">Only provide locker number if you want a HHS DECA locker sign.</label><br/><br/>
+							<input class="fs-anim-lower" id="q11" name="Locker_Number" type="number" placeholder=""/>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q12">Have you read and agree to the DECA code of conduct?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q12a" name="DECA_Code_of_Conduct_Agreement" type="radio" value="Yes" required/><label for="q12a" class="radio-yes">Yes</label></span>
+							</div>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q13">Have you read and agree to the Homestead DECA Hours policy?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q13a" name="DECA_Hours_Policy" type="radio" value="Yes" required/><label for="q13a" class="radio-yes">Yes</label></span>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q14">What business class are you currently enrolled in?</label><br/>
+							<input class="fs-anim-lower" id="q14" name="Current_Business_Class" type="text" placeholder="" required/>
+						</li>
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit" name="submit" value="submit">Send answers</button>
+					<button class="fs-submit" type="submit" name="submit" value="submit">Submit</button>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
@@ -77,6 +144,13 @@
 				} );
 			})();
 		</script>
+		<script>
+			function OnSubmitSuccess(){
+			       setTimeout(function(){
+			           window.location.href="sent.html";
+			       }, 2000)
+			 }
+		</script>
 	</body>
 </html>
-<iframe width="0" height="0" border="0" name="submitFrame" id="submitFrame"></iframe>
+<iframe style="display: none;" width="0" height="0" border="0" name="submitFrame" id="submitFrame"></iframe>
