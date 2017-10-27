@@ -1,11 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 nav {
   padding: 5px;
-  text-align: center;
+  text-align: right;
   animation-delay: 1s;
 }
 nav ul {
@@ -23,8 +24,10 @@ nav li {
   float: left;
 }
 nav a:hover {
-  color: F0F0F0;
-  text-shadow: 2px 2px 5px #000000;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 100;
+
 }
 nav li a {
   text-decoration: none;
@@ -35,12 +38,10 @@ nav li a {
 }
 #home_title {
   padding: 20px;
-  padding-top: 5%;
-  font-family: Yantramanav;
+  font-family: Heebo;
   font-size: 100px;
   color: #FFFFFF;
-  text-align: center;
-  text-shadow: 2px 2px 5px #000000;
+  text-align: left;
   animation-delay: 1s;
 }
 
@@ -48,8 +49,7 @@ nav li a {
   position: absolute;
   bottom: 5px;
   color: #FFFFFF;
-  text-shadow: 1px 1px 3px #000000;
-  font-family: Rubik;
+  font-family: Catamaran;
   padding-left: 5px;
   animation-delay: 1s;
 }
@@ -61,8 +61,7 @@ nav li a {
   width: 300px;
   text-align: right;
   color: #FFFFFF;
-  text-shadow: 1px 1px 3px #000000;
-  font-family: Rubik;
+  font-family: Catamaran;
   animation-delay: 1s;
 }
 #developer a {
@@ -70,7 +69,7 @@ nav li a {
   color: #FFFFFF;
 }
 #developer a:hover {
-  color: #ffa577;
+  color: #f4f392;
   font-weight: bolder;
 }
 #notice {

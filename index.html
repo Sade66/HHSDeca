@@ -3,37 +3,30 @@
   <title>HHS Deca</title>
   <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
   <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
-  <link href="https://fonts.googleapis.com/css?family=Rubik|Yantramanav:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik|Yantramanav:900|Heebo:100,300,400,500,700,800,900|Catamaran:100" rel="stylesheet">
   <script src="/cdn-cgi/apps/head/gp0DCcNu51paT48DWyyF26-tybg.js"></script><link rel="icon" href="favicon.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/js/background.cycle.js"></script>
   <script type="text/javascript">
-    $(document).ready(function() {
-      $("body").backgroundCycle({
-        imageUrls: [
-          'assets/img/main1.png',
-          'assets/img/main2.png',
-          'assets/img/main3.png',
-          'assets/img/main4.png',
-          'assets/img/main5.png',
-          'assets/img/main6.png',
-          'assets/img/main7.png'
-        ],
-        fadeSpeed: 3500,
-        duration: 4000,
-        backgroundSize: SCALING_MODE_COVER
-      });
-    });
+    function ran_col() { //function name
+        var color = '#'; // hexadecimal starting symbol
+        var letters = ['51e5e8','0b44a0','ffaa60','6a75f2','f16969']; //Set your colors here
+        color += letters[Math.floor(Math.random() * letters.length)];
+        document.getElementById('body').style.background = color; // Setting the random color on your div element.
+    }
+    window.onload = function() {
+      ran_col();
+    }
   </script>
 <!-- Developed by Sam Delagrange-->
 </head>
-<body>
+<body id="body">
   <header>
     <nav class="animated bounceIn">
       <ul>
-        <li><a href="about">ABOUT</a></li>
-        <li><a href="join">JOIN</a></li>
-        <li><a href="calendar">CALENDAR</a></li>
+        <li><a href="about">about</a></li>
+        <li><a href="join">join</a></li>
+        <li><a href="calendar">calendar</a></li>
+        <li><a href="gallery">gallery</a></li>
       </ul>
     </nav>
   </header>
