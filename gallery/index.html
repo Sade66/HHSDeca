@@ -14,10 +14,20 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik|Yantramanav:900|Heebo:100,300,400,500,700,800,900|Catamaran:100" rel="stylesheet">
     <link rel="stylesheet" href="fluid-gallery.css">
     <link href="../assets/css/animate.css" rel="stylesheet" type="text/css"/>
-
+    <script type="text/javascript">
+      function ran_col() { //function name
+          var color = '#'; // hexadecimal starting symbol
+          var letters = ['51e5e8','0b44a0','ffaa60','6a75f2','f16969']; //Set your colors here
+          color += letters[Math.floor(Math.random() * letters.length)];
+          document.getElementById('body').style.background = color; // Setting the random color on your div element.
+      }
+      window.onload = function() {
+        ran_col();
+      }
+    </script>
 
 </head>
-<body>
+<body id="body">
 
 <div class="container gallery-container">
   <nav>
